@@ -110,6 +110,7 @@ header {
   left: 0;
   top: 0;
   transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
 }
 
 .menu.active {
@@ -153,11 +154,11 @@ header {
 }
 
 .burger.active > span:nth-child(1) {
-  transform: rotate(-45deg) translateY(1rem);
+  transform: rotate(-45deg) translateY(1rem) translateX(-0.1rem);
   width: 80%;
 }
 .burger.active > span:nth-child(2) {
-  transform: rotate(45deg) translateY(-0.9rem) translateX(0.1rem);
+  transform: rotate(45deg) translateY(-0.9rem) translateX(0.2rem);
 }
 
 .burger.active > span:nth-child(3) {
@@ -209,5 +210,129 @@ header {
   }
   .menu-link:last-child::after {
     display: none;
+  }
+}
+/* C2A SECTION */
+.home {
+  margin-top: 4rem;
+}
+
+.home-image {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+
+.home-content {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--textColor);
+}
+
+.home-content span {
+  font-size: 2.5rem;
+  display: block;
+}
+
+.home-icons {
+  background: var(--main);
+  width: max-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.scroll-down-button {
+  width: 1.5rem;
+  height: 5rem;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 1rem;
+  border: 0.2rem solid #7d62f2;
+  background: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.scroll-down-circle {
+  height: 1rem;
+  width: 1rem;
+  background: var(--main);
+  border-radius: 50%;
+  animation: circleJump 1s infinite alternate-reverse;
+}
+
+@keyframes circleJump {
+  form {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateY(-150%);
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .home-image {
+    width: 50%;
+  }
+  .scroll-down-button {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 8rem auto;
+  }
+
+  .home-image {
+    order: 2;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .home-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-content span {
+    font-size: 2.2rem;
+  }
+
+  .home-image {
+    width: 55%;
+    padding: 2rem;
+  }
+
+  .home-content h1 {
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 1650px) {
+  .home-image {
+    width: 45%;
+  }
+
+  .home {
+    margin: 4rem auto;
+  }
+
+  .home-content {
+    padding-left: 3rem;
+  }
+
+  .home-content h1 {
+    font-size: 3.9rem;
+  }
+
+  .home-content span {
+    font-size: 2.5rem;
   }
 }
